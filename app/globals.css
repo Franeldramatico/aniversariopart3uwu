@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 227, 215, 255;
+  --background-start-rgb: 5, 9, 21;
+  --background-end-rgb: 21, 10, 40;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgb(var(--background-end-rgb))
+  )
+  rgb(var(--background-start-rgb));
+  overflow: hidden;
+  min-height: 100svh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.hero-copy {
+  transform: translateY(clamp(-18px, -2vh, 0px));
+}
+
+.hero-cta {
+  bottom: max(4.5rem, calc(env(safe-area-inset-bottom) + 10vh));
+}
+
+@media (max-width: 760px) {
+  .hero-copy {
+    top: 13svh;
+  }
+
+  .hero-cta {
+    bottom: max(5rem, calc(env(safe-area-inset-bottom) + 13vh));
+  }
+
+  .hero-cta button {
+    min-width: 176px;
+    padding: 0.9rem 1.65rem;
+  }
+}
+
+@media (max-height: 680px) {
+  .hero-copy {
+    top: 10svh;
+    transform: scale(0.86);
+    transform-origin: top center;
+  }
+
+  .hero-cta {
+    bottom: max(3.5rem, calc(env(safe-area-inset-bottom) + 8vh));
+  }
+}
+
+/* Custom Scrollbar for overlay */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050915;
+}
+::-webkit-scrollbar-thumb {
+  background: #f72585;
+  border-radius: 3px;
+}
