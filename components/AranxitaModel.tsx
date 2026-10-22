@@ -16,7 +16,7 @@ declare global {
 
 export default function AranxitaModel() {
   const group = useRef<Group>(null);
-  const { scene } = useGLTF('/gothic_girl.glb');
+  const { scene } = useGLTF(`${process.env.NEXT_PUBLIC_BASE_PATH}/gothic_girl.glb`);
 
   useEffect(() => {
     calibrateCharacterModel(scene, {
@@ -33,4 +33,4 @@ export default function AranxitaModel() {
   );
 }
 
-useGLTF.preload('/gothic_girl.glb');
+useGLTF.preload(`${process.env.NEXT_PUBLIC_BASE_PATH}/gothic_girl.glb`);

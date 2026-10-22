@@ -16,7 +16,7 @@ declare global {
 
 export default function FranModel() {
   const group = useRef<Group>(null);
-  const { scene } = useGLTF('/chibiFran.glb');
+  const { scene } = useGLTF(`${process.env.NEXT_PUBLIC_BASE_PATH}/chibiFran.glb`);
 
   useEffect(() => {
     calibrateCharacterModel(scene, {
@@ -33,4 +33,4 @@ export default function FranModel() {
   );
 }
 
-useGLTF.preload('/chibiFran.glb');
+useGLTF.preload(`${process.env.NEXT_PUBLIC_BASE_PATH}/chibiFran.glb`);
